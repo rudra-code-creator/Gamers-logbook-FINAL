@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+</head>
+  <body>
+    <div class="container">
+      <div class="left-side">
+        <img src="/static/DALL·E 2024-08-27 16.52.09 - Create a logo for an app named 'Gamers Logbook'. The logo should feature a sleek, modern design combining elements of a gaming controller and an open .webp" 
+        width="1000" height="1000" alt="logo">
+      </div>
+
+      <div class="right-side">
+      <h1>Login</h1>
+      <!-- Show error message if there's an error -->
+      {% if error %}
+        <p class="error">{{ error }}</p>
+      {% endif %}
+      <form action="{{ url_for('login') }}" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Login">
+      </form>
+      <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign up</a>.</p>
+      </div>
+    </div>
+  </body>
+</html>

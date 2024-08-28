@@ -1,0 +1,1 @@
+Note any time "type" or "gametype" is mentioned in this codebase it actually means "rating" or "gamerating" im just too lazy too change it :)

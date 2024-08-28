@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+	<div class="container">
+	<!-- Display a welcome message with the username -->
+		<img src="static\gaming-banner-for-games-with-glitch-effect-neon-light-on-text-illustration-design-free-vector.jpg">
+		<h1>Welcome to Gamers Logbook, {{username}}</h1>
+		<h1>Games</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Game Name</th>
+					<th>Actions</th>
+					<th>Rating</th>
+					<th>Time spent</th>
+					<th>date last played</th>
+					<th>No. of acheivements</th>
+					<th>Is starred Y/N </th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				{% for game in gamelist %}
+				<tr>
+					<td>{{ game[1] }}</td>
+					<td>
+						<a href="{{ url_for('edit', id=game[0]) }}">Edit</a>
+						<a href="{{ url_for('delete', id=game[0]) }}">Delete</a>
+					</td>
+					<td>{{ game[3] }}</td>
+					<td>{{ game[2] }}</td>
+					<td>{{ game[3] }}</td>
+					<td>{{ game[3] }}</td>
+					<td>{{ game[3] }}</td>
+					
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<br>
+		<h2>Add Game</h2>
+		<div>
+		<form action="{{ url_for('add') }}" method="post">
+			<label for="name">Game Name:</label>
+			<input type="text" id="gamename" name="gamename">
+			<br>
+
+			<label for="rating"> rating:</label>
+			<input type="text" id="rating" name="rating">
+			<br>
+
+			<label for="gametype"> Time spent:</label>
+			<input type="text" id="gametype" name="gametype">
+			<br>
+
+			<label for="datelastplayed"> date last played:</label>
+			<input type="text" id="datelastplayed" name="datelastplayed">
+			<br>
+
+			<label for="noofacheivements"> No. of acheivements:</label>
+			<input type="integer" id="noofacheivements" name="noofacheivements">
+			<br><br>
+
+			<label for="isstarred"> Do you want to star this game Y/N </label>
+			<input type="char" id="isstarred" name="isstarred">
+			<br>
+
+			<br><br>
+			<input type="submit" value="Add data to my gaming logbook">
+		</form>
+		</div>
+
+		<!-- Logout button that redirects to the logout route -->
+		<a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- templates/edit.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Game</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+</head>
+<body>
+    <h1>Edit Game</h1>
+    <form action="{{ url_for('update', id=pet[0]) }}" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="petname">Game Name:</label>
+        <input type="text" id="petname" name="petname" value="{{ pet[1] }}">
+        <br>
+        <label for="pettype">Time spent:</label>
+        <input type="text" id="pettype" name="pettype" value="{{ pet[2] }}">
+        <br><br>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

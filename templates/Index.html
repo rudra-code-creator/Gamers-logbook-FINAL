@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-side">
+        <img src="/static/DALL·E 2024-08-27 16.52.09 - Create a logo for an app named 'Gamers Logbook'. The logo should feature a sleek, modern design combining elements of a gaming controller and an open .webp" 
+        width="1000" height="1000" alt="logo">
+      </div>
+      <div class="right-side">
+      <br>
+      {% if 'username' in session %}
+        <h1>You are logged in as {{ session['username'] }}. <a href="{{ url_for('members') }}">Access the members area</a>.</h1>
+      {% else %}
+        <h1> You are not logged in </h1>
+        <button class="login-btn"><a href="{{ url_for('login') }}">Login</a></button>
+        <button class="signup-btn"><a href="{{ url_for('signup') }}">Sign up</a></button>
+      {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

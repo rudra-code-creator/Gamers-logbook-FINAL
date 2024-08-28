@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+  color: #000000; /* Example background color */
+}
+
+.container {
+  display: flex;
+  width: 100%; /* Adjust as needed */
+  justify-content: space-between;
+  align-items: top;
+}
+
+.left-side {
+  width: 50%;
+}
+
+.left-side-signup {
+  width: 50%;
+}
+
+.right-side {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-side-signup {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-width: 100%; /* Ensures logo is responsive */
+  height: auto;
+}
+
+.login-btn, .signup-btn {
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #3b82f6; /* Example button color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-btn:hover, .signup-btn:hover {
+  background-color: #2563eb; /* Darker shade on hover */
+}
